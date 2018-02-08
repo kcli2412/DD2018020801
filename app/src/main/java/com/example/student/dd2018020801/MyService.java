@@ -24,6 +24,10 @@ public class MyService extends Service {
     public void onCreate() {
         super.onCreate();
         nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        if (Build.VERSION.SDK_INT >= 26)
+        {
+            regChannel();
+        }
         Log.d("MyService", "onCreate: ");
     }
 
